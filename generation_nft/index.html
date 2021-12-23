@@ -1,0 +1,1280 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation pour le projet Pronochain et ses solutions.">
+      
+      
+        <meta name="author" content="Pronochain">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>Accueil - initialisation génération NFT - Pronochain</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="pronochain" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#accueil" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Pronochain" class="md-header__button md-logo" aria-label="Pronochain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pronochain
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Accueil - initialisation génération NFT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pronochain" class="md-nav__button md-logo" aria-label="Pronochain" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Pronochain
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Global
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Global" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Global
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global/configuration/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Génération NFT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Génération NFT" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Génération NFT
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Initialisation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Initialisation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generation-nft" class="md-nav__link">
+    Génération NFT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-installation-de-python-39" class="md-nav__link">
+    1. Installation de Python 3.9.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creation-de-lenvironnement-de-developpement-virtuel" class="md-nav__link">
+    2. Création de l'environnement de développement virtuel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2bis-version-de-python-deja-presente" class="md-nav__link">
+    2BIS. Version de python déjà présente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-activation-de-lenvironnement-de-developpement-virtuel" class="md-nav__link">
+    3. Activation de l'environnement de développement virtuel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-installation-des-packages" class="md-nav__link">
+    4. Installation des packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-initialisation-des-variables-denvironnements" class="md-nav__link">
+    5. Initialisation des variables d'environnements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-installation-et-demarrage-du-conteneur-docker" class="md-nav__link">
+    6. Installation et démarrage du conteneur docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-commencer-a-developper" class="md-nav__link">
+    7. Commencer à développer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explication-docker" class="md-nav__link">
+    Explication docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Explication docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    Docker-compose
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker-compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenu" class="md-nav__link">
+    Contenu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+    <nav class="md-nav" aria-label="Dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    Build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose_1" class="md-nav__link">
+    Docker-compose
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker-compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#up" class="md-nav__link">
+    Up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warnings" class="md-nav__link">
+    Warnings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentations" class="md-nav__link">
+    Documentations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration/variables_environnements/" class="md-nav__link">
+        Variables d'environnements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration/pre_commit/" class="md-nav__link">
+        Pre-commit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration/vs_code/" class="md-nav__link">
+        Visual Studio Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/packages/" class="md-nav__link">
+        Packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/tests/" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/regles/" class="md-nav__link">
+        Règles et nomenclatures
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Fonctionnalités
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fonctionnalités" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Fonctionnalités
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fonctionnalites/face_detect/" class="md-nav__link">
+        Détection d'un visage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fonctionnalites/face_landmarks/" class="md-nav__link">
+        Masques du visage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fonctionnalites/face_aligner/" class="md-nav__link">
+        Alignement du visage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fonctionnalites/tilt_learning/" class="md-nav__link">
+        Direction du visage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generation-nft" class="md-nav__link">
+    Génération NFT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-installation-de-python-39" class="md-nav__link">
+    1. Installation de Python 3.9.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creation-de-lenvironnement-de-developpement-virtuel" class="md-nav__link">
+    2. Création de l'environnement de développement virtuel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2bis-version-de-python-deja-presente" class="md-nav__link">
+    2BIS. Version de python déjà présente
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-activation-de-lenvironnement-de-developpement-virtuel" class="md-nav__link">
+    3. Activation de l'environnement de développement virtuel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-installation-des-packages" class="md-nav__link">
+    4. Installation des packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-initialisation-des-variables-denvironnements" class="md-nav__link">
+    5. Initialisation des variables d'environnements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-installation-et-demarrage-du-conteneur-docker" class="md-nav__link">
+    6. Installation et démarrage du conteneur docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-commencer-a-developper" class="md-nav__link">
+    7. Commencer à développer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explication-docker" class="md-nav__link">
+    Explication docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Explication docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    Docker-compose
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker-compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contenu" class="md-nav__link">
+    Contenu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+    <nav class="md-nav" aria-label="Dockerfile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    Build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose_1" class="md-nav__link">
+    Docker-compose
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker-compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#up" class="md-nav__link">
+    Up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#warnings" class="md-nav__link">
+    Warnings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentations" class="md-nav__link">
+    Documentations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="accueil">Accueil</h1>
+<h2 id="generation-nft">Génération NFT</h2>
+<p>La génération NFT consiste à créer une solution permettant de <strong>récupérer les différentes parties d'un visage</strong> d'une personne <strong>réelle</strong>, <strong>styliser</strong> ces parties, les <strong>stocker</strong> dans la blockchain <strong>IPFS</strong> et par la suite en assembler plusieurs pour réaliser une <strong>carte NFT</strong> avec des niveaux de raretés différents. Cette fonctionnalité est accessible via une <strong>API</strong>.</p>
+<ul>
+<li><a href="#getting-started">Getting Started</a><br>
+  <strong>1</strong> . <a href="#first">Installation de Python 3.9</a><br>
+  <strong>2</strong> . <a href="#second">Création de l'environnement de développement virtuel</a><br>
+  <strong>2BIS</strong>. <a href="#secondbis">Version de python déjà présente</a><br>
+  <strong>3</strong> . <a href="#third">Activation de l'environnement de développement virtuel</a><br>
+  <strong>4</strong> . <a href="#fourth">Installation des packages</a><br>
+  <strong>5</strong> . <a href="#fifth">Initialisation des variables d'environnements</a><br>
+  <strong>6</strong> . <a href="#sixth">Installation et démarrage du conteneur docker</a><br>
+  <strong>7</strong> . <a href="#seventh">Commencer à développer</a><br></li>
+<li><a href="#explication-docker">Explication docker</a><ul>
+<li><a href="#contenu">Docker-compose - Contenu</a></li>
+<li><a href="#build">Dockerfile - Build</a></li>
+<li><a href="#up">Docker-compose - Up</a></li>
+</ul>
+</li>
+<li><a href="#warnings">Warnings</a></li>
+<li><a href="#documentations">Documentations</a></li>
+</ul>
+<p><br></p>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<p>Pour pouvoir commencer à développer dans les meilleures conditions, plusieurs installations sont nécessaires. Cette documentation est réalisée pour <strong>Windows</strong> uniquement. En ce qui concerne <strong>Linux</strong>, il vous faudra suivre des tutoriels en ligne pour l'installation de Python et pour connaître le chemin du langage (<strong>étape 1, 2 et 2BIS</strong>). Le reste des étapes seront identiques.</p>
+<hr />
+<h3 id="1-installation-de-python-39"><a id="first"></a><a style="font-size: 24px;"><strong>1</strong></a>. <strong>Installation</strong> de <a href="https://www.python.org/ftp/python/3.9.9/python-3.9.9-amd64.exe"><strong>Python 3.9</strong></a>.</h3>
+<p><img alt="Python installer" src="../pictures/generation_nft/python-installer.png" /></p>
+<p>Par défaut, python va s'installer sur <strong><em>AppData/Local/Programs/Python39</em></strong>. Pour y accéder <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span> puis saisissez <strong><em>%appdata%</em></strong>. L'explorer de fichiers va s'ouvrir dans <strong><em>AppData/Roaming</em></strong>. Il vous suffira d'aller dans le parent puis remonter le chemin.<br></p>
+<p><strong>Ce chemin sera utile si vous avez déjà une autre version de python installée sur votre ordinateur.</strong>
+Si vous avez déjà une version de Python installé autre que la 3.9 : <strong>3.7, 3.8</strong> ... Il y a plusieurs solutions :
+- <strong>Désinstaller les autres versions</strong> et garder uniquement la 3.9 (conseillé).
+- <strong>Suivre</strong> l'étape <strong>2BIS</strong>.</p>
+<details class="bug"><summary>Python 3.10</summary><p>Pour information, Python 3.10 est <strong>disponible depuis la fin d'année 2021</strong>, cependant beaucoup de packages ne sont <strong>pas</strong> encore <strong>compatibles</strong> et aucun changement n'est réellement impactant sur notre solution.</p>
+</details>
+<hr />
+<h3 id="2-creation-de-lenvironnement-de-developpement-virtuel"><a id="second"></a><a style="font-size: 24px;"><strong>2</strong></a>. <strong>Création</strong> de l'<strong>environnement de développement virtuel</strong></h3>
+<p>Dans les dernières versions de Python, l'environnement virtuel <strong>venv</strong> est installé nativement. Rendez-vous dans le dossier de la solution et ouvrez un terminal powershell.</p>
+<div align="center">
+    <img src="../pictures/generation_nft/open-terminal.png"/>
+</div>
+
+<p>Commande pour créer l'environnement (<strong>lire phrase en dessous avant</strong>):</p>
+<pre><code>python -m venv pronochain
+</code></pre>
+<details class="warning" open="open"><summary>Déjà python ?</summary><p>Si vous avez <strong>déjà une version de python</strong>, rendez-vous étape <strong>2BIS</strong>.</p>
+</details>
+<p>L'environnement de développement virtuel va vous permettre d'<strong>installer</strong> tous ce qui concerne la solution <strong>dans un dossier du projet</strong>, ce qui évitera d'installer les différents packages en <strong>global</strong> sur <strong>votre ordinateur</strong> et de contrôler de A à Z ce que l'application utilise.</p>
+<hr />
+<h3 id="2bis-version-de-python-deja-presente"><a id="secondbis"></a><a style="font-size: 24px;"><strong>2BIS</strong></a>. <strong>Version</strong> de python déjà <strong>présente</strong></h3>
+<p>Dans la même console, rentrez la commande :</p>
+<pre><code>python -V
+</code></pre>
+<p>Si la version qui apparaît est <strong>python 3.9.x</strong> alors vous pouvez reprendre l'étape 3, sinon <strong>copier</strong> le chemin de la version Python 3.9. Personnellement, le chemin est <strong><em>C:\Users\nga\AppData\Local\Programs\Python\Python39</em></strong>.</p>
+<p>Puis exécutez la commande suivant pour créer l'environnement de développement virtuel avec la version de python choisie.</p>
+<pre><code>COLLER/LE/CHEMIN/ICI -m venv pronochain
+</code></pre>
+<hr />
+<h3 id="3-activation-de-lenvironnement-de-developpement-virtuel"><a id="third"></a><a style="font-size: 24px;"><strong>3</strong></a>. <strong>Activation</strong> de l'<strong>environnement de développement virtuel</strong></h3>
+<p>Pour pouvoir utiliser l'environnement virtuel, il faut l'<strong>activer</strong>. <strong>IL FAUT TOUJOURS ACTIVER</strong> l'environnement avant de commencer à développer pour éviter d'installer les packages sur votre ordinateur au lieu de les installer dans le dossier.<br><br>
+Dans la console, tapez :</p>
+<pre><code>pronochain/Scripts/activate
+</code></pre>
+<p>Vous verrez normalement le nom de votre environnement virtuel en vert devant le chemin dans la console. Sur <strong>Visual Studio Code</strong>, si vous ouvrez le dossier entier dans le logiciel, vous pouvez afficher un terminal et choisir la version powershell. Il vous sera plus facile d'activer l'environnement pendant que vous développez.</p>
+<p>Pour désactiver l'environnement, il vous suffira de faire :</p>
+<pre><code>deactivate
+</code></pre>
+<p>Enfin, pour supprimer l'environnement, car une manipulation a été mal faite, fermer <strong>toutes les consoles</strong> ou <strong>Visual Studio Code</strong> et supprimer simplement le dossier <em>pronochain</em>.</p>
+<hr />
+<h3 id="4-installation-des-packages"><a id="fourth"></a><a style="font-size: 24px;"><strong>4</strong></a>. <strong>Installation</strong> des <strong>packages</strong></h3>
+<p>Pour installer tous les packages nécessaires pour faire fonctionner la solution, il vous suffit de taper ces commandes à la suite :</p>
+<pre><code>python -m pip install -r requirements.txt
+python -m pip install -r requirements-dev.txt
+python -m pip install -e .
+</code></pre>
+<p>Le fichier <strong>requirements.txt</strong> est l'équivalent du fichier package.json. Il comporte la liste de tous les packages.<br><br>
+Lorsque vous souhaitez ajouter un nouveau package, il faudra <strong>IMPÉRATIVEMENT</strong> ajouter <strong><em>python -m</em></strong> devant <strong><em>pip install</em></strong> puis d'ajouter le nom du package dans <strong><em>requirements.txt</em></strong>. Une documentation a été faite uniquement à ce sujet, pour la consulter <a href="python/packages/">cliquez ici</a>.</p>
+<hr />
+<h3 id="5-initialisation-des-variables-denvironnements"><a id="fifth"></a><a style="font-size: 24px;"><strong>5</strong></a>. <strong>Initialisation</strong> des <strong>variables d'environnements</strong></h3>
+<p>Notre application aura besoin de plusieurs variables d'environnements en guise de <strong>configuration</strong>. Par exemple, la connexion à la base de données. Une documentation sera créée pour connaître toutes les variables d'environnements à modifier. <strong>Un fichier</strong> est important pour cette partie :</p>
+<ul>
+<li><strong><em>.env.example</em></strong> : contient les variables sans leur vraie valeur avec leur pattern.</li>
+</ul>
+<p>Le fait qu'il n'y ait pas de valeur est plutôt logique. Nous n'allons pas mettre dans le <strong>répertoire GIT</strong> les clés secrètes.
+La première manipulation est de copier-coller le fichier et de le renommer en <strong>supprimant le '.example'</strong>.
+Une fois copié, passez à l'étape suivante.</p>
+<details class="warning" open="open"><summary>Warning</summary><p>Il faut <strong>modifier les variables d'environnements</strong> pour que la solution <strong>fonctionne</strong>. Une documentation a été rédigée.</p>
+</details>
+<hr />
+<h3 id="6-installation-et-demarrage-du-conteneur-docker"><a id="sixth"></a><a style="font-size: 24px;"><strong>6</strong></a>. <strong>Installation et démarrage</strong> du <strong>conteneur docker</strong></h3>
+<p>Toujours dans la même console, à la racine du projet.
+Un conteneur docker a été configuré pour vous faciliter le développement, mais aussi le déploiement. Une fois le conteneur docker lancé en mode développement, vous pourrez démarrer l'API ou accéder au service externe de la documentation. L'<strong>API</strong> sera joignable via <a href="http://localhost:8000"><strong>http://localhost:8000</strong></a> et le <strong>swagger</strong> via <a href="http://localhost:8000/docs"><strong>http://localhost:8000/docs</strong></a>.</p>
+<p>Pour créer et démarrer le conteneur au premier lancement :</p>
+<pre><code>docker-compose pull &amp;&amp; docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build -d
+</code></pre>
+<p>Pour simplement démarrer le docker après le premier lancement :</p>
+<pre><code>docker-compose up -d
+</code></pre>
+<details class="info"><summary>Version production</summary><p>Un autre docker-compose existe pour la <strong>version de production</strong> qui <strong>lance automatiquement l'API</strong> et qui n'a pas les packages de développement ni la documentation.</p>
+</details>
+<p>Par la suite, pour démarrer l'API en développement, il suffira d'exécuter cette commande sur votre terminal VSCode (par exemple) :</p>
+<pre><code>docker exec -it pronochain_fastapi python app/launch.py -d
+</code></pre>
+<details class="danger not-expand" open="open"><summary>Ne pas oulier "-d"</summary></details>
+<p>Le fichier <strong>launch.py</strong> va démarrer l'API en version développement avec cette commande :</p>
+<p>uvicorn app.generation_nft_api.main:app --host 0.0.0.0 --debug --reload</p>
+<ul>
+<li><strong><em>--host</em></strong> : rends accessible l'application depuis l'IP du serveur ou depuis votre local.</li>
+<li><strong><em>--debug</em></strong> : nom assez explicite pour comprendre</li>
+<li><strong><em>--reload</em></strong> : si vous modifiez le code dans l'API, celle-ci redémarrera automatiquement. <strong>Attention, si une erreur 500 (erreur serveur) est détectée, il faudra redémarrer l'API avec la commande</strong>.</li>
+</ul>
+<p>Le choix de ne pas démarrer l'API au lancement du docker a été fait pour plusieurs raisons :
+- <strong>Plus simple à debug</strong>. Lorsque vous allez print() une variable, celle-ci s'affichera dans votre console.
+- <strong>Plus facilement rédemarrable</strong>. Lorsqu'une erreur système intervient, l'API est arrêté. Si l'API était lancé via le docker, il faudrait relancer à chaque fois le conteneur. <br></p>
+<h2 id="7-commencer-a-developper"><a id="seventh"></a><strong>7</strong>. <strong>Commencer</strong> à <strong>développer</strong></h2>
+<p>Les <strong>six premières étapes</strong> vont vous permettre de <strong>démarrer l'application</strong>. Cependant, il reste encore une étape pour pouvoir développer correctement : <strong>la configuration pre-commit</strong>.<br>
+Lorsque vous allez essayer de <strong>push</strong> votre code sur le <strong>répertoire GIT</strong> sur la branche develop ou master, la pipeline va déployer le code sur les serveurs. Lors du build de la solution sur le serveur, une étape de vérification du respect de différentes règles du langage python est lancé. Si jamais votre code n'est <strong>pas conforme</strong>, le build ne pourra <strong>pas s'effectuer</strong>. Pour vous faciliter le travail, plusieurs vérifications de votre côté vont être réalisées à chaque commit. Certaines modifieront le code automatiquement, d'autres vous indiqueront les changements à suivre. Toutes ces vérifications se font grâce au package pre-commit. Pour l'installer et le configurer, rendez-vous sur la documentation dans la catégorie <a href="configuration/pre_commit/"><em>Configuration/Pre-commit</em></a>.</p>
+<p><br></p>
+<h2 id="explication-docker">Explication docker</h2>
+<h3 id="docker-compose">Docker-compose</h3>
+<h4 id="contenu"><strong>Contenu</strong></h4>
+<p>Le docker-compose est divisé en <strong>trois fichiers</strong>. Le premier fichier <strong>docker-compose.yml</strong> est un fichier global à tous les environnements. Il permet de configurer ce qui sera commun pour la version <strong>développement</strong> et la version <strong>production</strong>.
+Voici le contenu du fichier <strong>docker-compose.yml</strong> :
+<div class="highlight"><span class="filename">docker-compose.yml</span><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="s">&#39;3.9&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+
+  <span class="nt">api</span><span class="p">:</span>
+    <span class="nt">build</span><span class="p">:</span>
+      <span class="nt">context</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+      <span class="nt">dockerfile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./dockerfiles/Dockerfile.api</span>
+    <span class="nt">env_file</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">app/.env</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;${API_PORT:-8000}:8000&#39;</span>
+    <span class="nt">container_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pronochain_fastapi</span>
+</code></pre></div></p>
+<p>Pour faire simple, les deux environnements auront besoin de l'API sur le port 8000, valeur par défaut. Pour changer ce port, il suffit de modifier la variable <strong>API_PORT</strong> dans le fichier <strong><em>.env</em></strong>.</p>
+<p>Je n'expliquerai pas le fichier pour la production, il est très similaire à celui du fichier de développement et il n'est pas nécessairement utile pour l'initialisation de l'application en mode développpement. Je vous invite tout de même à le consulter : <strong><em>docker-compose.prod.yml</em></strong></p>
+<p>docker-compose nous permet de surcharger les différentes images et leurs propriétés. Le fichier <strong><em>docker-compose.dev.yml</em></strong> :</p>
+<div class="highlight"><span class="filename">docker-compose.dev.yml</span><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="s">&#39;3.9&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+
+  <span class="nt">api</span><span class="p">:</span>
+    <span class="nt">build</span><span class="p">:</span>
+      <span class="nt">context</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+      <span class="nt">args</span><span class="p">:</span>
+        <span class="nt">NODE_ENV</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">development</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tail -f /dev/null</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">.:/src</span>
+</code></pre></div>
+<p>Nous surchargeons l'image <strong>api</strong> avec un <strong>argument</strong> récupérable depuis le Dockerfile et une <strong>command</strong>.</p>
+<pre><code>tail -f /dev/null
+</code></pre>
+<p>Elle permet de <strong>maintenir allumé</strong> l'image docker. Sans cette commande, le docker s'allumerait et s'éteindrait directement car il n'aurait rien à exécuter.</p>
+<p><br><br></p>
+<h3 id="dockerfile">Dockerfile</h3>
+<h4 id="build"><strong>Build</strong></h4>
+<p>Lorsque que l'on va <strong>build</strong> le conteneur de la solution, le fichier <strong>Dockerfile</strong> à la racine sera appelé pour l'image <strong>api</strong>. Dans le docker-compose, c'est la propriété <strong>build</strong> qui s'occupe d'allée chercher ce fameux fichier. Dans notre cas, comme il est à la racine, la propriété est égale à <strong>"."</strong>.</p>
+<p>À l'intérieur du fichier se trouve plusieurs commandes qui ont pour <strong>seul et uniquement</strong> but de fournir <strong>toute la configuration manquante à l'image</strong> pour pouvoir fonctionner.
+Par exemple, pour pouvoir faire fonctionner FastAPI, il faut obligatoirement les packages. C'est le Dockerfile qui va copier les fichiers importants et les coller dans le volume du conteneur.</p>
+<div class="highlight"><span class="filename">Dockerfile</span><pre><span></span><code>FROM python:3.9
+
+ARG NODE_ENV
+WORKDIR /src
+
+ENV <span class="nv">PYTHONPATH</span><span class="o">=</span>/src
+ENV PYTHONDONTWRITEBYTECODE <span class="m">1</span>
+ENV PYTHONUNBUFFERED <span class="m">1</span>
+
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+
+COPY . /src
+
+RUN pip install --upgrade pip
+RUN pip install --upgrade -r requirements.txt
+
+RUN <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$NODE_ENV</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="se">\</span>
+    <span class="k">then</span> pip install -r requirements-dev.txt<span class="p">;</span> <span class="se">\</span>
+    <span class="k">fi</span>
+
+RUN <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$NODE_ENV</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="se">\</span>
+    <span class="k">then</span> pip install -e .<span class="p">;</span> <span class="se">\</span>
+    <span class="k">else</span> pip install .<span class="p">;</span> <span class="se">\</span>
+    <span class="k">fi</span>
+</code></pre></div>
+<p>Ce script va <strong>créer un répertoire</strong> dans le <strong>volume du conteneur docker</strong>, <strong>copier-coller</strong> les différents fichiers de la solution dans ce dossier puis lancer l'<strong>installation des packages</strong>. Grâce à l'argument <strong>NODE_ENV</strong>, le fichier sait s'il doit installer les packages pour le développement ou non.<br>
+En <strong>mode développement</strong>, le <strong>volume du docker-compose</strong> est le même que le <strong>WORKDIR de l'image</strong>. Cela signifie que la commande <strong>COPY est inutile</strong> et que lorsque qu'un fichier en local sera modifié, le docker récupéra automatiquement la mise à jour. En <strong>version de production</strong>, le <strong>volume est différent du WORKDIR</strong> de l'image. Dans ce cas, le fichier <strong>.dockerignore sera accessible</strong> et ne copiera pas tous les fichiers/dossiers.
+<br><br></p>
+<h3 id="docker-compose_1">Docker-compose</h3>
+<h4 id="up"><strong>Up</strong></h4>
+<p>Lorsque l'on exécute la commande <strong><em>docker-compose up -d</em></strong>, le conteneur va être créé, s'il n'existe pas.</p>
+<p><br></p>
+<h2 id="warnings">Warnings</h2>
+<p>Il faut bien <strong>distinguer l'environnement de développement virtuel</strong> au <strong>conteneur Docker</strong>. Vous développer sur votre environnement, mais c'est le conteneur docker qui va récupérer le code et simuler le serveur. Si vous ajoutez un package, le docker ne l'aura pas, si vous changez le code, le docker peut se mettre à jour automatiquement.<br><br></p>
+<h2 id="documentations">Documentations</h2>
+<p>Une fois ces étapes terminées, toute la documentation est disponible ici : <strong>TODO URL EN LIGNE</strong> ou <a href="http://localhost:9090"><strong>http://localhost:9090</strong></a> si vous avez démarrer votre documentation. C'est une application destinée uniquement à <strong>réaliser</strong> des documentations plus <strong>esthétiques</strong> qu'un <strong>simple markdown</strong>. Si elle n'est pas encore initialisée, je vous invite à aller voir le <strong>répertoire documentation</strong>.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../global/configuration/documentation/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Documentation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Documentation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="configuration/variables_environnements/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Variables d&#39;environnements" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Variables d'environnements
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 - 2022 Pronochain
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://mobile.twitter.com/pronochain" target="_blank" rel="noopener" title="mobile.twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking", "navigation.top"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -36,23 +36,24 @@ Une **documentation** a été faite sur la **documentation** (WOUAH). Pour y acc
 
 # Déployer les nouveautés
 
-Lorsque vous avez **modifié** la documentation, il est impératif de **redéployer** les nouveautées. Une fois que la pull request de **votre branche à master** a été **validée et mergée**, faites ces commandes.
+**ATTENTION, NE JAMAIS PULL REQUEST, REBASE OU MERGE LA BRANCHE origin/gh-pages OU gh-pages SUR master OU UNE AUTRE BRANCHE !**
 
-Pour se faire rendez-vous sur la branche **gh-pages**.
+Lorsque vous avez **modifié** la documentation, il est impératif de **redéployer** les nouveautées. Une fois que la pull request de **votre branche à master** a été **validée et mergée** avec l'une de vos branches en local, faites ces commandes.
 
-    git checkout gh-pages
+Installer sur votre **ordinateur** le package **mkdocs-material** (voir documentation de la solution **Génération NFT -> Initialisation** pour installer correctement Python sur votre ordinateur).
 
-Si vous ne l'avez pas faites :
+    pip install mkdocs-material
 
-    git pull
 
-Ensuite faites :
+Une fois que votre **documentation est écrite**, **commiter vos changements** et **pusher votre branche**.
 
-    git rebase master
+    git push nom-de-ta-branche
 
-Puis:
+La section qui va suivre nécessite de se rendre sur le **Google DRIVE -> Pronochain -> Informations -> Identifiants -> Identifiants compte**.
+Il se peut qu'une **popup GitHub** s'ouvre pour vous demander les informations de connexion pour la **première action** sur le répertoire. Pour la première popup avec le logo de GitHub visible, remplissez avec **l'email et le mot de passe**. La seconde popup : **l'email**, et la dernière : le **PAT** (**personal access token**).
+Une fois votre branch push en distant, faites en sorte de mettre votre **branche sur master** grâce à la **pull request** du github (vous pouvez directement sans reviewers).
+Une fois **master à jour en distant et en local**, faites:
 
-    docker run --rm -it -v ~/.ssh:/root/.ssh -v ${PWD}:/docs squidfunk/mkdocs-material gh-deploy
+    mkdocs gh-deploy --force
 
-Cette commande va vous demandez l'**email du github** et le **PTA** (personal access token). Rendez-vous sur le **google drive** pour récupérer les **identifiants**.
-Une fois que la commande est exécutée, le site va automatiquement se mettre à jour.
+Et voilà !

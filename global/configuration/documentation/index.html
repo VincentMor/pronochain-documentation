@@ -288,6 +288,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#consultation" class="md-nav__link">
+    Consultation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -297,6 +304,13 @@
         <li class="md-nav__item">
   <a href="#ajouter-une-page" class="md-nav__link">
     Ajouter une page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployer-en-ligne" class="md-nav__link">
+    Déployer en ligne
   </a>
   
 </li>
@@ -665,6 +679,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#consultation" class="md-nav__link">
+    Consultation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -674,6 +695,13 @@
         <li class="md-nav__item">
   <a href="#ajouter-une-page" class="md-nav__link">
     Ajouter une page
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployer-en-ligne" class="md-nav__link">
+    Déployer en ligne
   </a>
   
 </li>
@@ -696,7 +724,10 @@
 <ul>
 <li><strong>Initialisation et installation très simple</strong> : fonctionne sur une <strong>image docker</strong> sans dépendances.</li>
 <li><strong>Ergonomie et fonctionnalités</strong> : de base, le design de la documentation est <strong>plutôt beau</strong> et la multitude des fonctionnalités implémentées de base nous permet de structurer notre documentation de la meilleure des manières.</li>
+<li><strong>Hébergement en ligne gratuit</strong> sur GitHub.</li>
 </ul>
+<h2 id="consultation">Consultation</h2>
+<p>Si ce que vous souhaitez correspond uniquement à de la <strong>consultation</strong> rendez vous sur la documentation en ligne : <a href="https://pronochain.github.io/pronochain-documentation/">pronochain documentation</a>. Sinon, si vous souhaitez <strong>ajouter ou modifier une page</strong>, suivez les étapes dans <strong>Installation</strong></p>
 <h2 id="installation">Installation</h2>
 <p>Pour installer la documentation, il vous suffit de <strong>cloner le répertoire GIT</strong>. Dans ce répertoire, le fichier <strong><em>docker-compose.yml</em></strong> va vous permettre de récupérer l'image et de la build sur votre docker. Une fois démarré, il suffira de se rendre sur <strong>localhost:9090</strong>.</p>
 <p>Rendez-vous à la <strong>racine de la solution</strong> de la documentation et tapez la commande dans une <strong>console</strong> (<strong>powershell</strong> de préférence si vous êtes sous Windows) :</p>
@@ -707,7 +738,8 @@
 </code></pre>
 <details class="warning not-expand" open="open"><summary>Installer la police "Poppins-Regular.ttf"</summary></details>
 <h2 id="ajouter-une-page">Ajouter une page</h2>
-<p>Tout ce qui concerne la navigation se trouve dans le fichier <strong><em>mkdocs.yml</em></strong>. Ce fichier comporte plusieurs informations, dont l'<strong>ajout d'extentions</strong>. La seule partie dans ce fichier qui doit être <strong>modifiée</strong> est le code à la <strong>fin du fichier</strong>.
+<p>Créer votre branche depuis <strong>master</strong>.
+Tout ce qui concerne la navigation se trouve dans le fichier <strong><em>mkdocs.yml</em></strong>. Ce fichier comporte plusieurs informations, dont l'<strong>ajout d'extentions</strong>. La seule partie dans ce fichier qui doit être <strong>modifiée</strong> est le code à la <strong>fin du fichier</strong>.
 La <strong>structure et l'indentation</strong> de la navigation doivent être respectées, comme pour les dossiers et les fichiers dans le dossier <strong>docs</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">Accueil</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
@@ -728,6 +760,24 @@ La <strong>structure et l'indentation</strong> de la navigation doivent être re
       <span class="p p-Indicator">-</span> <span class="nt">Logging</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">generation_nft/python/logging.md</span>
 </code></pre></div>
 <p>Pour ce qui est du contenu des pages et des différentes syntaxes, il faut connaître le <strong>markdown</strong>. De plus, vous pouvez vous rendre sur <a href="https://squidfunk.github.io/mkdocs-material/reference/">cette page</a> pour voir la liste des extensions que vous pouvez utiliser.</p>
+<h2 id="deployer-en-ligne">Déployer en ligne</h2>
+<details class="danger not-expand" open="open"><summary>ATTENTION, NE JAMAIS PULL REQUEST, REBASE OU MERGE LA BRANCHE origin/gh-pages OU gh-pages SUR master OU UNE AUTRE BRANCHE !</summary></details>
+<p>Lorsque vous avez <strong>modifié</strong> la documentation, il est impératif de <strong>redéployer</strong> les nouveautées.</p>
+<p>Faites une <strong>pull request</strong> que vous allez <strong>directement accepter</strong> dans le répertoire GitHub. <a href="https://github.com/Pronochain/pronochain-documentation/pulls">LIEN RAPIDE</a>.</p>
+<p>Une fois que la pull request de <strong>votre branche à master</strong> a été <strong>validée et mergée</strong>, faites les étapes qui suivent.</p>
+<p>Installer sur votre <strong>ordinateur</strong> le package <strong>mkdocs-material</strong> (voir documentation de la solution <strong>Génération NFT -&gt; Initialisation</strong> pour installer correctement Python sur votre ordinateur).</p>
+<pre><code>pip install mkdocs-material
+</code></pre>
+<p>Une fois que votre <strong>documentation est écrite</strong>, <strong>commité vos changements</strong> et <strong>pushé votre branche</strong>.</p>
+<pre><code>git push nom-de-ta-branche
+</code></pre>
+<p>La section qui va suivre nécessite de se rendre sur le <strong>Google DRIVE -&gt; Pronochain -&gt; Informations -&gt; Identifiants -&gt; Identifiants compte</strong>.
+Il se peut qu'une <strong>popup GitHub</strong> s'ouvre pour vous demander les informations de connexion pour la <strong>première action</strong> sur le répertoire. Pour la première popup avec le logo de GitHub visible, remplissez avec <strong>l'email et le mot de passe</strong>. La seconde popup : <strong>l'email</strong>, et la dernière : le <strong>PAT</strong> (<strong>personal access token</strong>).
+Une fois votre branch push en distant, faites en sorte de mettre votre <strong>branche sur master</strong> grâce à la <strong>pull request</strong> du github (vous pouvez directement sans reviewers).
+Une fois <strong>master à jour en distant et en local</strong>, faites:</p>
+<pre><code>mkdocs gh-deploy --force
+</code></pre>
+<p>Et voilà !</p>
 
               
             </article>

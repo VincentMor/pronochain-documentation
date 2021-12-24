@@ -13,7 +13,7 @@ Il a été décidé de centraliser toutes nos documentations des différentes so
 
 ## Consultation
 
-Si ce que vous souhaitez correspond uniquement à de la **consultation** rendez vous sur la documentation en ligne : [pronochain documentation](https://pronochain.github.io/pronochain-documentation/). Sinon, si vous souhaitez **ajouter ou modifier une page**, suivez les étapes dans **Installation**
+Si ce que vous souhaitez correspond uniquement à de la **consultation** rendez vous sur la documentation en ligne : [Documentation Pronochain](https://sixlegendary.github.io/pronochain-documentation/) . Sinon, si vous souhaitez **ajouter ou modifier une page**, suivez les étapes dans **Installation**
 
 ## Installation
 

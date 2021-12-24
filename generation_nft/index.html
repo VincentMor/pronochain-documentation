@@ -1165,10 +1165,13 @@ RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 COPY . /src
 
-RUN pip install --upgrade pip
-RUN pip install --upgrade -r requirements.txt
+RUN --mount<span class="o">=</span><span class="nv">type</span><span class="o">=</span>cache,target<span class="o">=</span>/root/.cache <span class="se">\</span>
+    pip install --upgrade pip
+RUN --mount<span class="o">=</span><span class="nv">type</span><span class="o">=</span>cache,target<span class="o">=</span>/root/.cache <span class="se">\</span>
+    pip install -r requirements.txt
 
-RUN <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$NODE_ENV</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="se">\</span>
+RUN --mount<span class="o">=</span><span class="nv">type</span><span class="o">=</span>cache,target<span class="o">=</span>/root/.cache <span class="se">\</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$NODE_ENV</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;development&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="se">\</span>
     <span class="k">then</span> pip install -r requirements-dev.txt<span class="p">;</span> <span class="se">\</span>
     <span class="k">fi</span>
 
@@ -1178,8 +1181,30 @@ RUN <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</
     <span class="k">fi</span>
 </code></pre></div>
 <p>Ce script va <strong>créer un répertoire</strong> dans le <strong>volume du conteneur docker</strong>, <strong>copier-coller</strong> les différents fichiers de la solution dans ce dossier puis lancer l'<strong>installation des packages</strong>. Grâce à l'argument <strong>NODE_ENV</strong>, le fichier sait s'il doit installer les packages pour le développement ou non.<br>
-En <strong>mode développement</strong>, le <strong>volume du docker-compose</strong> est le même que le <strong>WORKDIR de l'image</strong>. Cela signifie que la commande <strong>COPY est inutile</strong> et que lorsque qu'un fichier en local sera modifié, le docker récupéra automatiquement la mise à jour. En <strong>version de production</strong>, le <strong>volume est différent du WORKDIR</strong> de l'image. Dans ce cas, le fichier <strong>.dockerignore sera accessible</strong> et ne copiera pas tous les fichiers/dossiers.
-<br><br></p>
+En <strong>mode développement</strong>, le <strong>volume du docker-compose</strong> est le même que le <strong>WORKDIR de l'image</strong>. Cela signifie que la commande <strong>COPY est inutile</strong> et que lorsque qu'un fichier en local sera modifié, le docker récupéra automatiquement la mise à jour. En <strong>version de production</strong>, le <strong>volume est différent du WORKDIR</strong> de l'image. Dans ce cas, le fichier <strong>.dockerignore sera accessible</strong> et ne copiera pas tous les fichiers/dossiers.</p>
+<p>Lorsque vous voulez ajouter un package, il faut obligatoirement <strong>rebuild l'image</strong>. A chaque fois qu'un build est fait, il va <strong>retélécharger tous ces packages</strong> ce qui peut prendre du temps. Pour évitez d'attendre, vous pouvez activer la <strong>fonctionnalité BuildKi</strong>t sur docker. Elle permet de <strong>mettre en cache</strong> les différents fichiers que vous souhaitez.</p>
+<p>--mount=type=cache,target=/root/.cache</p>
+<p>Cette <strong>commande</strong> dans le Dockerfile permet de <strong>spécifier quels élements seront en cache</strong>.</p>
+<p>Pour <strong>activer BuildKit</strong>, il suffit de modifier le fichier <strong>daemon.js</strong> (pour linux, il est assez facile de trouver son emplacement grâce à internet). En ce qui concerne Windows, si vous utilisez l'interface : <strong>Settings -&gt; Docker Engine</strong>, sinon dans votre : <strong>Users -&gt; TonUser -&gt; .docker</strong> Si vous n'avez pas de daemon.json, vous pouvez le créer.</p>
+<p>Ajouter :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;features&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;buildkit&quot;</span> <span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+</code></pre></div>
+<p>Le fichier doit ressembler à :
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;builder&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;gc&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;defaultKeepStorage&quot;</span><span class="p">:</span> <span class="s2">&quot;20GB&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;debug&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;experimental&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;insecure-registries&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;registry-mirrors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+  <span class="nt">&quot;features&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;buildkit&quot;</span> <span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p><br><br></p>
 <h3 id="docker-compose_1">Docker-compose</h3>
 <h4 id="up"><strong>Up</strong></h4>
 <p>Lorsque l'on exécute la commande <strong><em>docker-compose up -d</em></strong>, le conteneur va être créé, s'il n'existe pas.</p>

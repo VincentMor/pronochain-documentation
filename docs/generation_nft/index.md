@@ -250,10 +250,13 @@ RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 COPY . /src
 
-RUN pip install --upgrade pip
-RUN pip install --upgrade -r requirements.txt
+RUN --mount=type=cache,target=/root/.cache \
+    pip install --upgrade pip
+RUN --mount=type=cache,target=/root/.cache \
+    pip install -r requirements.txt
 
-RUN if [ "$NODE_ENV" = "development" ] ; \
+RUN --mount=type=cache,target=/root/.cache \
+    if [ "$NODE_ENV" = "development" ] ; \
     then pip install -r requirements-dev.txt; \
     fi
 
@@ -265,6 +268,38 @@ RUN if [ "$NODE_ENV" = "development" ] ; \
 
 Ce script va **créer un répertoire** dans le **volume du conteneur docker**, **copier-coller** les différents fichiers de la solution dans ce dossier puis lancer l'**installation des packages**. Grâce à l'argument **NODE_ENV**, le fichier sait s'il doit installer les packages pour le développement ou non.<br>
 En **mode développement**, le **volume du docker-compose** est le même que le **WORKDIR de l'image**. Cela signifie que la commande **COPY est inutile** et que lorsque qu'un fichier en local sera modifié, le docker récupéra automatiquement la mise à jour. En **version de production**, le **volume est différent du WORKDIR** de l'image. Dans ce cas, le fichier **.dockerignore sera accessible** et ne copiera pas tous les fichiers/dossiers.
+
+Lorsque vous voulez ajouter un package, il faut obligatoirement **rebuild l'image**. A chaque fois qu'un build est fait, il va **retélécharger tous ces packages** ce qui peut prendre du temps. Pour évitez d'attendre, vous pouvez activer la **fonctionnalité BuildKi**t sur docker. Elle permet de **mettre en cache** les différents fichiers que vous souhaitez.
+
+  --mount=type=cache,target=/root/.cache
+
+Cette **commande** dans le Dockerfile permet de **spécifier quels élements seront en cache**.
+
+Pour **activer BuildKit**, il suffit de modifier le fichier **daemon.js** (pour linux, il est assez facile de trouver son emplacement grâce à internet). En ce qui concerne Windows, si vous utilisez l'interface : **Settings -> Docker Engine**, sinon dans votre : **Users -> TonUser -> .docker** Si vous n'avez pas de daemon.json, vous pouvez le créer.
+
+Ajouter :
+
+```json
+"features": { "buildkit" : true }
+```
+
+Le fichier doit ressembler à :
+```json
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "debug": true,
+  "experimental": false,
+  "insecure-registries": [],
+  "registry-mirrors": [],
+  "features": { "buildkit" : true }
+}
+```
+
 <br><br>
 
 ### Docker-compose

@@ -38,14 +38,18 @@ Une **documentation** a été faite sur la **documentation** (WOUAH). Pour y acc
 
 **ATTENTION, NE JAMAIS PULL REQUEST, REBASE OU MERGE LA BRANCHE origin/gh-pages OU gh-pages SUR master OU UNE AUTRE BRANCHE !**
 
-Lorsque vous avez **modifié** la documentation, il est impératif de **redéployer** les nouveautées. Une fois que la pull request de **votre branche à master** a été **validée et mergée** avec l'une de vos branches en local, faites ces commandes.
+orsque vous avez **modifié** la documentation, il est impératif de **redéployer** les nouveautées.
+
+Faites une **pull request** que vous allez **directement accepter** dans le répertoire GitHub. [LIEN RAPIDE](https://github.com/Pronochain/pronochain-documentation/pulls).
+
+Une fois que la pull request de **votre branche à master** a été **validée et mergée**, faites les étapes qui suivent.
 
 Installer sur votre **ordinateur** le package **mkdocs-material** (voir documentation de la solution **Génération NFT -> Initialisation** pour installer correctement Python sur votre ordinateur).
 
     pip install mkdocs-material
 
 
-Une fois que votre **documentation est écrite**, **commiter vos changements** et **pusher votre branche**.
+Une fois que votre **documentation est écrite**, **commité vos changements** et **pushé votre branche**.
 
     git push nom-de-ta-branche
 

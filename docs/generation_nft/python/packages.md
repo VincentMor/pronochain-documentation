@@ -33,7 +33,7 @@ Cette partie va **lister tous les packages** et expliquer leurs utilités. Il fa
 - **pre-commit** [^2.16.0^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).
 - **pydocstyle** [^6.1.1^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).
 - **vulture** [^2.3^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).
-- **semantic-release** [^7.23.0^]() : permet de **gérer les versions**. Lorsqu'un **nouveau commit** est **détecté** par rapport à la version **précédente**. Il suffira de faire la commande ***semantic-release version*** pour en créer une nouvelle. Il est possible de rajouter des tags comme **"--patch"**, **"--minor"** ou **"--major"** pour indiquer le niveau de la version.
+- **semantic-release** [^7.23.0^]() : permet de **gérer les versions**. Lorsqu'un **nouveau commit** est **détecté** par rapport à la version **précédente**. Il suffira de faire la commande ***python release.py*** pour en créer une nouvelle. Ce fichier va créer un **commit avec le tag** de la nouvelle version et remplir le fichier **CHANGELOG.md**. Il est possible de rajouter des tags comme **"-p"** pour un patch (dernier numéro), **"-mi"** (numéro du centre) ou **"-ma"** (premier numéro) pour indiquer le niveau de la version.
 
 ## Comment ajouter un nouveau package
 

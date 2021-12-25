@@ -31,8 +31,6 @@ Voici la **liste** des toutes les **règles** qui seront appliquées pour **notr
 
  - **flake8** ^[GIT](https://github.com/PyCQA/flake8)^ : **linter**, vérifie que les règles principales de python sont respectées. Flake8 indiquera uniquement si une règle n'est pas respecter, il ne modifiera en aucun cas le fichier. Il existe, pour lui aussi, une **extension Visual Studio Code** pour vous faciliter le travail.
 
- - **bandit** ^[GIT](https://github.com/PyCQA/bandit)^ : **vérifie la sécurite** du code python.
-
  - **pydocstyle** ^[GIT](https://github.com/PyCQA/pydocstyle)^ : **vérifie** que le code python soit **bien documenté**. Un raccourci existe pour ajouter un pattern d'un commentaire sous une fonction.
 
  - **isort** ^[GIT](https://github.com/PyCQA/isort)^ : **réorganise** les imports python avec des règles bien **précises**.

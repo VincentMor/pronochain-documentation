@@ -17,7 +17,7 @@
     
     
       
-        <title>Alignement du visage - Pronochain</title>
+        <title>Récupération des parties d'un visage - Pronochain</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alignement-du-visage" class="md-skip">
+        <a href="#recuperation-des-parties" class="md-skip">
           Aller au contenu
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Alignement du visage
+              Récupération des parties d'un visage
             
           </span>
         </div>
@@ -553,6 +553,34 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../face_aligner/" class="md-nav__link">
+        Alignement du visage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tilt_learning/" class="md-nav__link">
+        Direction du visage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -565,12 +593,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Alignement du visage
+          Récupération des parties du visage
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Alignement du visage
+        Récupération des parties du visage
       </a>
       
         
@@ -603,8 +631,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aligner-le-visage" class="md-nav__link">
-    Aligner le visage
+  <a href="#utilisation-du-modele" class="md-nav__link">
+    Utilisation du modèle
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilisation du modèle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recuperation-du-modele-pre-entraine" class="md-nav__link">
+    Récupération du modèle pré-entrainé
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traitement-de-la-donnee" class="md-nav__link">
+    Traitement de la donnée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prediction" class="md-nav__link">
+    Prédiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nettoyage-de-la-prediction" class="md-nav__link">
+    Nettoyage de la prédiction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultat" class="md-nav__link">
+    Résultat
   </a>
   
 </li>
@@ -613,34 +682,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tilt_learning/" class="md-nav__link">
-        Direction du visage
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../face_parsing/" class="md-nav__link">
-        Récupération des parties du visage
-      </a>
     </li>
   
 
@@ -700,8 +741,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aligner-le-visage" class="md-nav__link">
-    Aligner le visage
+  <a href="#utilisation-du-modele" class="md-nav__link">
+    Utilisation du modèle
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilisation du modèle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recuperation-du-modele-pre-entraine" class="md-nav__link">
+    Récupération du modèle pré-entrainé
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traitement-de-la-donnee" class="md-nav__link">
+    Traitement de la donnée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prediction" class="md-nav__link">
+    Prédiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nettoyage-de-la-prediction" class="md-nav__link">
+    Nettoyage de la prédiction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultat" class="md-nav__link">
+    Résultat
   </a>
   
 </li>
@@ -719,38 +801,96 @@
               
                 
 
-<h1 id="alignement-du-visage">Alignement du visage</h1>
+<h1 id="recuperation-des-parties">Récupération des parties</h1>
 <h2 id="definition">Définition</h2>
-<p>Le <strong>face aligner</strong> est un algorithme permettant <strong>d'aligner les yeux sur une ligne complètement horizontale</strong>. Cet algorithme intervient juste après la détection des différents points du visage. Il est nécessaire de passer par cette étape pour s'assurer d'un <strong>résultat convenable</strong>.</p>
+<p>La <strong>récupération des parties d'un visage</strong> intervient en plus du module <strong>face landmarks</strong>. Pour rappel, <strong>face landmarks</strong> permet d'avoir <strong>468 points</strong> très précis pour des éléments du visage. Cependant, les <strong>oreilles</strong>, la <strong>forme de la tête</strong>, les <strong>cheveux</strong> et la <strong>barbe</strong> ne sont pas identifiés. La méthode pour identifier des éléments sur une image s'appelle la <strong>segmentation</strong>. Cette méthode est notamment utilisée dans les algorithmes pour la <strong>conduite autonome</strong> de Tesla (en bien plus évoluée).</p>
 <div style="display:flex;flex-direction:row;justify-content:space-around;margin-top:8px;margin-bottom:10px;">
     <div style="display:flex;flex-direction:column;">
-        <div style="display:flex;flex-direction:row;align-items:center; justify-content:center;margin-bottom:4px;">
-            <img src="../../../pictures/generation_nft/face_aligner/error.png" style="width:24px;height:24px;margin-right: 2px;">
-            <h3 style="margin:0 0 0 6px !important;">Mauvais MBAPPE</h3>
+        <div style="display:flex;flex-direction:row;align-items:center; justify-content:center;margin-bottom:20px;">
+            <h3 style="margin:0 0 0 6px !important;">Image originale</h3>
         </div>
-        <img src="../../../pictures/generation_nft/face_aligner/kilian-wrong.png" style="height:200px;">
+        <img src="../../../pictures/generation_nft/face_parsing/giroud.jpg">
     </div>
     <div style="display:flex; flex-direction: column;">
-        <div style="display:flex;flex-direction:row;align-items:center; justify-content:center;margin-bottom:4px;">
-            <img src="../../../pictures/generation_nft/face_aligner/check.png" style="width:24px;margin-right:2px;">
-            <h3 style="margin:0 0 0 6px !important;">Bon MBAPPE</h3>
+        <div style="display:flex;flex-direction:row;align-items:center; justify-content:center;margin-bottom:20px;">
+            <h3 style="margin:0 0 0 6px !important;">Masque de l'image</h3>
         </div>
-        <img src="../../../pictures/generation_nft/face_aligner/kilian-good.png" style="height:200px;">
+        <img src="../../../pictures/generation_nft/face_parsing/mask_giroud.jpg">
     </div>
 </div>
 
-<hr />
-<h2 id="contexte">Contexte</h2>
-<p>Le but est de pouvoir générer une <strong>image originale tirée d'un visage d'un joueur de foot</strong>. La problématique était de détecter un visage. Grâce à plusieurs packages externes : <strong>OpenCV et MediaPipe</strong>, il a été très facile de <strong>récupérer plusieurs points</strong> importants du <strong>visage</strong> afin de <strong>tracer les contours</strong>. Cependant, la question de l'<strong>inclinaison de la tête</strong> devait être prise en compte. En soit, une tête inclinée n'est <strong>pas un problème</strong> lorsque l'on génère un dessin du visage. Le dessin pourra toujours être réaligné par rapport à une ligne horizontale par la suite. Cependant, le machine learning sur la <strong>direction du regard</strong> sera fortement impactée si tous les visages ne sont <strong>pas inclinés</strong> de la <strong>même façon</strong>. Il aurait été beaucoup plus <strong>compliqué</strong> de faire du machine learning sur des <strong>têtes inclinées</strong>, les résultats auraient été des <strong>faux positifs</strong> ou <strong>négatifs</strong>.</p>
-<h2 id="aligner-le-visage">Aligner le visage</h2>
-<p>Pour pouvoir aligner un visage, il faut avoir des <strong>points de références</strong>, pour savoir si le visage est incliné. Le principe de l'algorithme est de reprendre les points des <strong>deux yeux</strong>. Pour chaque oeil, on reprend le <strong>centre</strong> entre ces deux points. Il y aura donc <strong>deux centres pour chaque oeil</strong>, pour un visage. Dernière étape, tracer une ligne entre ces <strong>deux points centrales</strong>. La ligne qui apparaîtra aura un <strong>angle</strong> par rapport à une ligne complètement horizontale. Le but ensuite est de <strong>redresser l'image</strong> pour que la barre soit <strong>horizontale</strong>.</p>
-<div style="display:flex;justify-content:space-around;margin-bottom:10px;height:300px;">
-    <img src="../../../pictures/generation_nft/face_aligner/kilian-schema.png">
-    <img src="../../../pictures/generation_nft/face_aligner/kilian-schema-2.png">
-</div>
-
-<details class="info" open="open"><summary>Informations complémentaires</summary><p>Malheureusement, je pense qu'il n'est <strong>pas nécessaire</strong> de montrer l'algorithme, c'est un <strong>calcul complexe mathématique</strong> mélangeant manipulation de pixel et de distance. Si vous souhaitez comprendre l'algorithme, je vous conseille ce <strong><a href="https://www.pyimagesearch.com/2017/05/22/face-alignment-with-opencv-and-python/">tutoriel</a></strong>.</p>
+<details class="info" open="open"><summary>Contours</summary><p>Pour le bien de la documentation, les zones ont été colorées. Dans l'algorithme réel, nous reprenons uniquement les contours lissés pour améliorer le rendu.</p>
 </details>
+<details class="warning not-expand" open="open"><summary>Le modèle utilisé ne détecte pas encore la barbe !</summary></details>
+<h2 id="contexte">Contexte</h2>
+<p>Le but est de pouvoir générer une <strong>image originale tirée d'un visage d'un joueur de foot</strong>. La problématique était de récupérer les <strong>parties manquantes</strong> du visage que n'<strong>identifiait</strong> pas le module <strong>face landmarks</strong>. De <strong>nombreux modèles</strong> existent plus ou moins <strong>complexes</strong> et <strong>précis</strong> existent pour effectuer la <strong>"segmentation"</strong>.
+Ce qui a été le plus compliqué, c'est de <strong>choisir le modèle</strong>. Heureusement, il existe un <strong>répertoire GIT</strong> nommé <strong>face_parsing</strong> qui nous permet de réaliser ce que l'on souhaite de façon <strong>performante</strong> pour une <strong>première version</strong>.
+Comme vous avez pu le voir, le modèle choisi dans un premier temps ne <strong>récupère pas la barbe</strong>. C'est un <strong>modèle pré-entrainé</strong> par un <strong>organisme externe</strong>. Le plus optimal serait de <strong>réentrainer un modèle similaire</strong> avec l'ajout de la barbe. Cependant, l'entraînement d'un modèle est <strong>très long</strong>. Il doit être entrainé sur des <strong>millions de données</strong> et doit être <strong>paramétré</strong> de façon <strong>optimale pour un rendu optimale</strong>.</p>
+<h2 id="utilisation-du-modele">Utilisation du modèle</h2>
+<p>L'utilisation du modèle peut être découpée en <strong>3 étapes</strong>.</p>
+<h3 id="recuperation-du-modele-pre-entraine">Récupération du modèle pré-entrainé</h3>
+<p>Dans un premier temps, il faut télécharger ce modèle pré-entrainé. Il se présente sous la forme d'un fichier <strong>.pth</strong>.
+Il est <strong>hébergé</strong> sur le <strong>Google Drive</strong> de l'équipe et est automatiquement <strong>téléchargé</strong> lorsque la solution est lancée s'il n'est pas encore présent.
+Situé dans le dossier <strong>app/generation_nft/libraries/face_parsin/pre-trained/face_parts.pth</strong>, il est appelé dans la fonction <strong>load_state_dict</strong> du package <strong>pytorch</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">BiSeNet</span><span class="p">(</span>
+    <span class="n">resnet</span><span class="o">=</span><span class="s2">&quot;https://drive.google.com/u/1/uc?id=1e8HiZK_0C_56wYXc9nbDl9CyFVMfp151&amp;export=download&quot;</span><span class="p">,</span> <span class="c1"># modèle pour équilibrer le BiSeNet</span>
+    <span class="n">n_classes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">NUM_CLASSES</span><span class="p">,</span> <span class="c1"># Nombre de parties à détecter (par défaut 19)</span>
+<span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pretrained_model_path</span><span class="o">.</span><span class="n">parent</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">pretrained_model_path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">map_location</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</code></pre></div>
+<p>Le modèle <strong>pré-entrainé</strong> a utilisé <strong>BiSeNet</strong> comme modèle de <strong>segmentation</strong>. Il est nécessaire de reprendre exactement les <strong>mêmes paramètres</strong>.</p>
+<details class="info not-expand" open="open"><summary>L'exécution du modèle s'effectue sur le CPU et se lance en mode évaluation.</summary></details>
+<h3 id="traitement-de-la-donnee">Traitement de la donnée</h3>
+<p>La <strong>donnée</strong>, ou ici, <strong>le visage</strong>, dois avoir un <strong>format précis</strong> afin qu'il puisse être <strong>traité par le modèle</strong>. <strong>Pytorch</strong>, le package de deep learning, utilise le type <strong>Tensor</strong>, qui s'apparente grandement à un <strong>tableau de matrice</strong> comme pour le package <strong>numpy</strong> et qui représente l'image. <strong>En entrée</strong>, notre image est sous le format du <strong>tableau numpy</strong>, il faut le <strong>convertir</strong> en Tensor puis supprimer la <strong>première dimension</strong> (colonne) qui correspond au <strong>nombre de classes</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">infer_transforms</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+        <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">)),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">initialH</span><span class="p">,</span> <span class="n">initialW</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">face</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="k">if</span> <span class="n">initialH</span> <span class="o">!=</span> <span class="n">input_size</span> <span class="ow">or</span> <span class="n">initialW</span> <span class="o">!=</span> <span class="n">input_size</span><span class="p">:</span>
+    <span class="n">face</span> <span class="o">=</span> <span class="n">open_cv</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span>
+        <span class="n">face</span><span class="p">,</span> <span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">input_size</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">open_cv</span><span class="o">.</span><span class="n">INTER_NEAREST</span>
+    <span class="p">)</span>  <span class="c1"># redimensionne le visage</span>
+
+<span class="n">face_tensor</span> <span class="o">=</span> <span class="n">infer_transforms</span><span class="p">(</span><span class="n">face</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</code></pre></div>
+<details class="info not-expand" open="open"><summary>Les <strong>opérations</strong> sur le type Tensor, sont effectuées sur le <strong>CPU</strong>.</summary></details>
+<h3 id="prediction">Prédiction</h3>
+<p>La <strong>prédiction</strong> est simplement l'étape où l'<strong>image traitée</strong> est fournie au modèle. Ce modèle retournera une <strong>prédiction</strong>, toujours dans le format <strong>Tensor</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">face_tensor</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+    <span class="n">prediction</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">initialW</span><span class="p">,</span> <span class="n">initialH</span><span class="p">),</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bilinear&quot;</span><span class="p">,</span>
+    <span class="n">align_corners</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<p>La prédiction se présente sous <strong>cette forme</strong> :</p>
+<p><img src="../../../pictures/generation_nft/face_parsing/prediction.jpg"></p>
+<h3 id="nettoyage-de-la-prediction">Nettoyage de la prédiction</h3>
+<p>Comme vous l'aurez remarqué, la prédiction concerne <strong>19 zones</strong>. Seulement <strong>4</strong> nous intéressent : <strong>les oreilles (2), la forme de la tête et les cheveux</strong>.
+Il faut <strong>coloriser</strong> de la bonne couleur les <strong>parties</strong> à l'<strong>intérieur de la zone bleue</strong> et supprimer (mettre en blanc) les <strong>zones non souhaitées</strong> (<strong>cou et vêtement</strong>).
+Une fois que seules les <strong>zones souhaitées</strong> sont récupérées, nous récupérons uniquement <strong>leur contour</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">cleaned_prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean_mask</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span>
+<span class="n">visual_mask_color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">colorize_parts</span><span class="p">(</span><span class="n">cleaned_prediction</span><span class="p">)</span>
+<span class="n">visual_parts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_parts</span><span class="p">(</span><span class="n">visual_mask_color</span><span class="p">)</span>
+</code></pre></div>
+<details class="danger not-expand" open="open"><summary>Code trop technique.</summary></details>
+<h2 id="resultat">Résultat</h2>
+<p>Pour finir, la fonction <strong>get_parts</strong> au-dessus, stocke dans une <strong>variable</strong> chaque <strong>contour</strong> avec leur <strong>correspondance</strong>.</p>
+<p><img src="../../../pictures/generation_nft/face_parsing/hair_mask.jpg"></p>
 
               
             </article>
@@ -769,7 +909,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Pied de page">
       
         
-        <a href="../face_landmarks/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Masques du visage" rel="prev">
+        <a href="../tilt_learning/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Direction du visage" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -778,26 +918,11 @@
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Masques du visage
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../tilt_learning/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Direction du visage" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Suivant
-              </span>
               Direction du visage
             </div>
           </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
         </a>
+      
       
     </nav>
   

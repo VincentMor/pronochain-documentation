@@ -63,3 +63,4 @@ nav:
       - Masques du visage: generation_nft/fonctionnalites/face_landmarks.md
       - Alignement du visage: generation_nft/fonctionnalites/face_aligner.md
       - Direction du visage: generation_nft/fonctionnalites/tilt_learning.md
+  - Base de donnée: bdd/bdd.md

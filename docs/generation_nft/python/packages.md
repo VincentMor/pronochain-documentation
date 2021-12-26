@@ -19,6 +19,7 @@ Cette partie va **lister tous les packages** et expliquer leurs utilités. Il fa
 - **pandas** [^1.3.5^](https://pandas.pydata.org/) : librairie de **data analyse**.
 - **pytest** [^6.2.5^](https://docs.pytest.org/en/6.2.x/) : librairie **officielle** et **conseillée** par python pour effectuer les tests.
 - **python-dotenv** [^0.19.2^](https://pypi.org/project/python-dotenv/) : librairie pour **ajouter les variables d'environnements** du fichier ***.env** dans des variables constantes python.
+- **scikit-image** [^0.19.1^](https://scikit-image.org/) : librairie pour la **manipulation d'image plus avancée** que opencv.
 - **scikit-learn** [^1.0.1^](https://scikit-learn.org/stable/) : librairie pour faciliter la **mise en place** de **modèle de machine learning**.
 
 ??? info "Autres packages"
@@ -26,7 +27,6 @@ Cette partie va **lister tous les packages** et expliquer leurs utilités. Il fa
 
 ### Packages développements
 
-- **bandit** [^1.7.1^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).
 - **black** [^21.12b0^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).
 - **flake8** [^4.0.1^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).
 - **isort** [^5.10.1^]() : voir documentation sur [pre-commit](../configuration/pre_commit.md).

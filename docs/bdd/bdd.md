@@ -7,6 +7,7 @@ summary: Information sur la bdd
 
 ## Installation
 
+Pour l'installation sur window vous pouvez installer pgAdmin [ici](https://www.pgadmin.org/download/pgadmin-4-windows/)
 WIP tuto pour container docker
 
 ## Structure
@@ -15,7 +16,7 @@ Vous pouveez consulter le schéma de la bdd sur [cette page](https://dbdiagram.i
 
 ## Règles métier
 
-Cette partie détaille les règles métier non explicite sur le schéma de la bdd par notion.
+Cette partie détaille les règles métier non explicites sur le schéma de la bdd par notion.
 
 ### Partie de nft
 
@@ -27,7 +28,7 @@ Toutes les parties de nft on une rareté. La somme de la fréquence des rareté 
 
 #### Couleur
 
-Certaines partie de nft on une couleur. Une couleur dans la bdd est representée par un id, ***un code hexa valide***(un # suivis de 3 ou 6 caractère alphanumérique) de d'indiquateur boolean pour les parites de nft pouvant utliser cette couleur.
+Certaines parties de nft ont une couleur. Une couleur dans la bdd est representée par un id, ***un code hexa valide***(un # suivis de 3 ou 6 caractère alphanumérique) et d'indiquateur boolean pour les parites de nft pouvant utliser cette couleur.
 Les indiquateur boolean sont les suivant:
     * is_card_color utilisé pour vérifier si la couleur ajoutée a un CarBackground est bien une couleur de carte
     * is_hairiness_color pour vérifier si la couleur ajoutée aux Hairs,Beards,Eyebrows est bien une couleur de poils
@@ -39,7 +40,7 @@ Une couleur ne peut être supprimée si elle est utilisée.
 
 #### Ecusson et t-shirt
 
-Les ecussons et t-shirt sont stocké dans la table template. Un template a un type (écusson ou t-shirt) et une rareté. Les écusson et t-shirt reprennet la couleur pincipale du club.
+Les ecussons et t-shirts sont stockés dans la table template. Un template a un type (écusson ou t-shirt) et une rareté. Les écusson et t-shirt reprennent la couleur pincipale du club.
 
 ### Utilisateur
 
@@ -48,6 +49,4 @@ La suppression d'un utilisateur entraine la suppression de ses équipes, pronost
 
 ### Pronostique
 
-Les pronositique sont sotcker dans la table prédiction.a contraint un utilisatuer peut faire un seul pronositque par match est garantie par une contrainte d'unicité sur le couple id de match et id de tipster.La contraint de 11 pronostique sans résultat à la fois n'est pas mise sur la bdd pour des raisons de performance. On ne peut pas sepermattre  de perdere en performance sur une des fonctionalité au coeur de notre projet.
-On ne peut pas supprimer un match si il est associé a un pronostique.
-
+Les pronositiques sont sotckés dans la table prédiction. La contraint un utilisatuer peut faire un seul pronositque par match est garantie par une contrainte d'unicité sur le couple id de match et id de tipster.La contraint de 11 pronostique sans résultat à la fois n'est pas mise sur la bdd pour des raisons de performance. On ne peut pas se permattre  de perdre en performance sur une des fonctionalité au coeur de notre projet.On ne peut pas supprimer un match si il est associé a un pronostique. et no ne peut pas supprimer un club si il est associé à un match ou à un pronostique.

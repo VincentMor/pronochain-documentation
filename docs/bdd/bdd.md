@@ -7,8 +7,8 @@ summary: Information sur la bdd
 
 ## Installation
 
-Pour l'installation sur window vous pouvez installer pgAdmin [ici](https://www.pgadmin.org/download/pgadmin-4-windows/)
-WIP tuto pour container docker
+Pour l'installation sur window vous pouvez installer pgAdmin [ici](https://www.pgadmin.org/download/pgadmin-4-windows/).
+Pour linux vous devrez utiliser [l'image docker](https://www.pgadmin.org/download/pgadmin-4-container/).
 
 ## Structure
 

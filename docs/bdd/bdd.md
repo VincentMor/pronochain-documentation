@@ -8,6 +8,7 @@ summary: Information sur la bdd
 ## Installation
 
 Pour l'installation sur window vous pouvez installer pgAdmin [ici](https://www.pgadmin.org/download/pgadmin-4-windows/).
+
 Pour linux vous devrez utiliser [l'image docker](https://www.pgadmin.org/download/pgadmin-4-container/).
 
 ## Structure
@@ -20,7 +21,7 @@ Cette partie détaille les règles métier non explicites sur le schéma de la b
 
 ### Partie de nft
 
-Cette parite expliqe toutes ***les règles métier*** liées aux ***parties de nft***.
+Cette parite expliqe toutes **les règles métier** liées aux **parties de nft**.
 
 #### Raretés
 
@@ -28,14 +29,14 @@ Toutes les parties de nft on une rareté. La somme de la fréquence des rareté 
 
 #### Couleur
 
-Certaines parties de nft ont une couleur. Une couleur dans la bdd est representée par un id, ***un code hexa valide***(un # suivis de 3 ou 6 caractère alphanumérique) et d'indiquateur boolean pour les parites de nft pouvant utliser cette couleur.
+Certaines parties de nft ont une couleur. Une couleur dans la bdd est representée par un id, **un code hexa valide**(un # suivis de 3 ou 6 caractère alphanumérique) et d'indiquateur boolean pour les parites de nft pouvant utliser cette couleur.
 Les indiquateur boolean sont les suivant:
-    * is_card_color utilisé pour vérifier si la couleur ajoutée a un CarBackground est bien une couleur de carte
-    * is_hairiness_color pour vérifier si la couleur ajoutée aux Hairs,Beards,Eyebrows est bien une couleur de poils
-    * is_eye_color pour vérifier si la couleur ajoutée aux yeux est bien une couleur d'oeil
-    * is_skin_color pour vérifier si la coouleur ajoutée aux Necks,Faces,Ears est bien une couleur de paux
-    * is_club_color pour vérifier les couleurs primaire et secondaire d'un club est bien une couleur de club. De plus la couleur primaire doit être différente de la couleur secondaire.
-Ces vérifications sont faites à l'aide de trigger before insert or update qui ***bloquent l'insertion si la couleur n'est pas bonne***.
+ * is_card_color utilisé pour vérifier si la couleur ajoutée a un CarBackground est bien une couleur de carte
+ * is_hairiness_color pour vérifier si la couleur ajoutée aux Hairs,Beards,Eyebrows est bien une couleur de poils
+ * is_eye_color pour vérifier si la couleur ajoutée aux yeux est bien une couleur d'oeil
+ * is_skin_color pour vérifier si la coouleur ajoutée aux Necks,Faces,Ears est bien une couleur de paux
+ * is_club_color pour vérifier les couleurs primaire et secondaire d'un club est bien une couleur de club. De plus la couleur primaire doit être différente de la couleur secondaire.
+Ces vérifications sont faites à l'aide de trigger before insert or update qui **bloquent l'insertion si la couleur n'est pas bonne**.
 Une couleur ne peut être supprimée si elle est utilisée.
 
 #### Ecusson et t-shirt

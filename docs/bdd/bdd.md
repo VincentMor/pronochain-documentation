@@ -11,6 +11,8 @@ Pour l'installation sur window vous pouvez installer pgAdmin [ici](https://www.p
 
 Pour linux vous devrez utiliser [l'image docker](https://www.pgadmin.org/download/pgadmin-4-container/).
 
+Une fois pgAdmin installé créez une bdd avec les options de base et utilisez le scipt que vous pouvez récuperer [ici](https://dev.azure.com/SixLegendary/Pronochain/_git/pronochain-databse-script) pour créer les tables.
+
 ## Structure
 
 Vous pouveez consulter le schéma de la bdd sur [cette page](https://dbdiagram.io/d/61c0b5323205b45b73c5fa35)

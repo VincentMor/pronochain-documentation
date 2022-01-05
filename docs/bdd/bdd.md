@@ -29,7 +29,7 @@ Toutes les parties de nft on une rareté. La somme de la fréquence des rareté 
 
 #### Couleur
 
-Certaines parties de nft ont une couleur. Une couleur dans la bdd est representée par un id, **un code hexa valide**(un # suivis de 3 ou 6 caractère alphanumérique) et d'indiquateur boolean pour les parites de nft pouvant utliser cette couleur.
+Certaines parties de nft ont une couleur. Une couleur dans la bdd est representée par un id, **un code hexa valide** (un # suivis de 3 ou 6 caractère alphanumérique) et d'indiquateur boolean pour les parites de nft pouvant utliser cette couleur.
 Les indiquateur boolean sont les suivant:
  * is_card_color utilisé pour vérifier si la couleur ajoutée a un CarBackground est bien une couleur de carte
  * is_hairiness_color pour vérifier si la couleur ajoutée aux Hairs,Beards,Eyebrows est bien une couleur de poils

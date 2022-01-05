@@ -64,6 +64,7 @@ nav:
       - Alignement du visage: generation_nft/fonctionnalites/face_aligner.md
       - Direction du visage: generation_nft/fonctionnalites/tilt_learning.md
       - Récupération des parties du visage: generation_nft/fonctionnalites/face_parsing.md
+  - Base de donnée: bdd/bdd.md
   - API:
     - Configuration:
         - Husky: api/configuration/husky.md

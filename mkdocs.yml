@@ -68,3 +68,11 @@ nav:
       - Initialisation: application_mobile/index.md
       - Aides: application_mobile/aide.md
       - Autres: application_mobile/methode.md
+  - Base de donnée: bdd/bdd.md
+  - API:
+    - Configuration:
+        - Husky: api/configuration/husky.md
+        - PhpCsFixer: api/configuration/php_cs_fixer.md
+        - Lint Staged: api/configuration/lint_staged.md
+        - Commitlint: api/configuration/commitlint.md
+        - Standard Version: api/configuration/standard_version.md

@@ -64,3 +64,7 @@ nav:
       - Alignement du visage: generation_nft/fonctionnalites/face_aligner.md
       - Direction du visage: generation_nft/fonctionnalites/tilt_learning.md
       - Récupération des parties du visage: generation_nft/fonctionnalites/face_parsing.md
+  - Application Mobile:
+      - Initialisation: application_mobile/index.md
+      - Aides: application_mobile/aide.md
+      - Autres: application_mobile/methode.md

@@ -23,11 +23,11 @@ Cette partie détaille les règles métier non explicites sur le schéma de la b
 
 ### Partie de nft
 
-Cette parite expliqe toutes **les règles métier** liées aux **parties de nft**.
+Cette partie expliqe toutes **les règles métier** liées aux **parties de nft**.
 
 #### Raretés
 
-Toutes les parties de nft on une rareté. La somme de la fréquence des rareté ne foit pas dépaser 100. Cette règle métier n'est pas contrainte directement dans la bdd car cela pourrait poser des problème au momnent ou on voudras ajuster les fréquence de toutes les raretés.Une rareté ne peut être supprimée si elle est utilisée.
+Toutes les parties de nft ont une rareté. La somme de la fréquence des rareté ne doit pas dépaser 100. Cette règle métier n'est pas contrainte directement dans la bdd car cela pourrait poser des problèmes au momnent ou on voudras ajuster les fréquences de toutes les raretés.Une rareté ne peut être supprimée si elle est utilisée.
 
 #### Couleur
 
@@ -47,9 +47,9 @@ Les ecussons et t-shirts sont stockés dans la table template. Un template a un 
 
 ### Utilisateur
 
-Les utilisateurs sont sotckés dans la table Tipster avec un id de portefeuille métamask et un pseudo unique. Un tipster peut ajouter d'autre tipster en amis.Ces amis sont stocké dans la table TipsterFriend. Pour qu'un amis soit valide les deux identifiants de tipser doivent être différent. La réponse à l'invitation est un boolean null tant que l'autre tipster n'a pas répondu. Puis vrai au faux suivant la réponse. La limite de 3 inviation au même utilisateur ainsi que l'imposibilité de ré-inviter quelqu'un qui à déjà accepté n'est pas mise en place sur la bdd pour des raison de performance.Même si un trigger fait perdre peut de performance, sur une fonctionalité potentielement très utilisé avec des performance requise élévée ce n'est pas recommendé.
+Les utilisateurs sont sotckés dans la table user avec une adresse de portefeuille métamask et un pseudo unique. Un user peut ajouter d'autre tipster en amis.Ces amis sont stocké dans la table UserFriends. Pour qu'un amis soit valide les deux identifiants d'user doivent être différent. Les invitations sont stockées dans la table UserFriendInvites. Un refus d'inviation pourras être répondue par oui, non ou bloquer. Si la reponse est bloquer un ligne seras ajoutée dans la table BlockedUser.L'imposibilité de ré-inviter quelqu'un qui à déjà accepté n'est pas mise en place sur la bdd pour des raison de performance.Même si un trigger fait perdre peut de performance, sur une fonctionalité potentielement très utilisé avec des performance requise élévée ce n'est pas recommendé.
 La suppression d'un utilisateur entraine la suppression de ses équipes, pronostique et amis. La supression d'une équipe entraine la suppression de tous ses joueurs ainsi que leur relation.
 
 ### Pronostique
 
-Les pronositiques sont sotckés dans la table prédiction. La contraint un utilisatuer peut faire un seul pronositque par match est garantie par une contrainte d'unicité sur le couple id de match et id de tipster.La contraint de 11 pronostique sans résultat à la fois n'est pas mise sur la bdd pour des raisons de performance. On ne peut pas se permattre  de perdre en performance sur une des fonctionalité au coeur de notre projet.On ne peut pas supprimer un match si il est associé a un pronostique. et no ne peut pas supprimer un club si il est associé à un match ou à un pronostique.
+Les pronositiques sont sotckés dans la table prédiction. La contrainte  d'un utilisateur peut faire un seul pronositque par match est garantie par une contrainte d'unicité sur le couple id de match et user_id.La contraint de 11 pronostique sans résultat à la fois n'est pas mise sur la bdd pour des raisons de performance. On ne peut pas se permattre  de perdre en performance sur une des fonctionalité au coeur de notre projet.On ne peut pas supprimer un match si il est associé a un pronostique. et no ne peut pas supprimer un club si il est associé à un match ou à un pronostique.
